@@ -1,0 +1,33 @@
+{
+  "name": "maki-choice",
+  "version": "1.0.0",
+  "description": "A picker to search mapbox's maki icons",
+  "main": "maki-choice.vue",
+  "scripts": {
+    "test": "mocha",
+    "start": "webpack-dev-server --open --watch"
+  },
+  "keywords": [
+    "maki",
+    "icon",
+    "mapbox",
+    "vue"
+  ],
+  "author": "Steven Kalt",
+  "license": "MIT",
+  "dependencies": {
+    "maki": "^2.1.0",
+    "vue": "^2.5.2",
+    "webpack": "^3.8.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "eslint": "^4.9.0",
+    "eslint-plugin-react": "^7.4.0",
+    "style-loader": "^0.19.0",
+    "svg-inline-loader": "^0.8.0",
+    "vue-inline": "^1.0.1",
+    "vue-loader": "^13.3.0",
+    "vue-template-compiler": "^2.5.2"
+  }
+}
