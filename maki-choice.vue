@@ -1,25 +1,32 @@
 <template>
-  <div>
-    <input type="text" placeholder="search icon names and themes" v-model="search" >
-  </input>
-    <!-- searched icons -->
-    <div v-for="icon in icons" @hover="() => shown = icon.name">
-      <inline
-      :class="{active: icon.name.match(search) || icon.theme.match(search)}"
-      :name="'./' + icon.name + '-11.svg'"
-      ></inline>
-      <inline
-      :class="{active: icon.name.match(search) || icon.theme.match(search)}"
-      :name="icon.name + '-15.svg'"
-      ></inline>
+  <div class="container-fluid">
+    <div class="col-6">
+      <input
+        class="col-xs-12"
+        type="text"
+        placeholder="search icon names and themes"
+        v-model="search"
+        >
+      </input>
+      <!-- searched icons -->
+      <div class="col-xs-12">
+        <icon-pair
+          v-for="icon in icons"
+          v-bind="icon"
+          :search="search"
+          :key="icon.name"
+          v-on:clicked="showIcon"
+          v-on:hovered="showIcon"
+        ></icon-pair>
+      </div>
     </div>
-    <div>
-      {{shown}}
-    </div>
+    <display-icon-pair v-bind="shown"></display-icon-pair>
   </div>
 </template>
 <script>
 import maki from 'maki';
+import iconPair from './icon-pair.vue';
+import displayIconPair from './display-icon-pair.vue';
 const icons = [];
 for (let theme in maki.layouts.streets){
   for (let name of maki.layouts.streets[theme]){
@@ -28,26 +35,32 @@ for (let theme in maki.layouts.streets){
 };
 // const options = [].concat(maki.layouts.all.all, Object.keys(maki.layouts.streets)
 export default {
-  // no props
   data(){
     return {
       search:'',
       icons,
-      shown:''
+      shown:{
+        name:'',
+        theme:''
+      }
     };
-  }
-  // methods:{
-  //   updateSearch(val){
-  //     this.search = val;
-  //   }
-  // }
+  },
+  methods:{
+    getSvgId(name){
+      return document.querySelector(`icon`);
+    },
+    showIcon(toShow){
+      this.shown = toShow
+    }
+  },
+  components:{iconPair, displayIconPair}
 }
 </script>
-<style>
-div:not(.active){
-  opacity:.5
-}
-.active{
-  color:#000
+<style scoped>
+/*div {
+  display: inline-block;
+}*/
+input{
+  width: 100%;
 }
 </style>
