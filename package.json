@@ -5,7 +5,8 @@
   "main": "maki-choice.vue",
   "scripts": {
     "test": "mocha",
-    "start": "webpack-dev-server --open --watch"
+    "start": "webpack-dev-server --open --watch",
+    "build": "webpack"
   },
   "keywords": [
     "maki",
