@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid">
-    <div class="col-6">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
       <input
         class="col-xs-12"
         type="text"
@@ -19,8 +20,9 @@
           v-on:hovered="showIcon"
         ></icon-pair>
       </div>
+      </div>
+      <display-icon-pair v-bind="shown"></display-icon-pair>
     </div>
-    <display-icon-pair v-bind="shown"></display-icon-pair>
   </div>
 </template>
 <script>
@@ -31,7 +33,7 @@ const icons = [];
 for (let theme in maki.layouts.streets){
   for (let name of maki.layouts.streets[theme]){
     icons.push({name, theme});
-  }
+}
 };
 // const options = [].concat(maki.layouts.all.all, Object.keys(maki.layouts.streets)
 export default {

@@ -1,12 +1,16 @@
 <template>
-  <div class="col-5">
+  <div class="col-md-5 col-sm-12">
     <!-- title stuff -->
-    <div class="icon-info">
-      <h3>{{name}}</h3>
-      <h4 v-show="theme">Theme: {{theme}}</h4>
+    <div class="row icon-info">
+      <div class="col-12">
+        <h3>{{name || 'Icon'}} {{theme ? `  [${theme}]` : 'info'}}</h3>
+      </div>
+      <!-- <h3 class="col-3">{{name || 'Icon'}}</h3>
+      <h4>{{theme ? `Theme: ${theme}`: 'Info'}}</h4> -->
     </div>
     <!-- icons -->
-    <div class="display-icons">
+    <div class="row display-icons">
+      <div class="col-12">
       <div class="display-icon-11">
         <inline :name="`./${name}-11.svg`"></inline>
       </div>
@@ -15,6 +19,7 @@
           </div>
       </div>
     </div>
+  </div>
 </template>
 <script>
   export default {
