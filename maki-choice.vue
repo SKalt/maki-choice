@@ -30,7 +30,7 @@ import presentIcons from './svg.js';
 import maki from 'maki';
 import iconPair from './icon-pair.vue';
 import displayIconPair from './display-icon-pair.vue';
-console.log(presentIcons);
+
 const icons = [];
 const named = new Set()
 for (let theme in maki.layouts.streets){
