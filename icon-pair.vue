@@ -15,7 +15,7 @@
     <div class="icon-15">
       <inline
       :class="{active: active}"
-      :name="`$./${name}-15.svg`"
+      :name="`./${name}-15.svg`"
       ></inline>
     </div>
   </div>
