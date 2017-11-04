@@ -4,6 +4,7 @@
     :class="`$icon-${name}`"
     @hover="onHover"
     @click="onClick"
+    :title="`${name} [${theme}]`"
   >
     <div class="icon-11">
       <inline
