@@ -61,6 +61,7 @@ export default {
   display: inline-block;
 }*/
 input{
+  padding:4px;
   width: 100%;
 }
 </style>

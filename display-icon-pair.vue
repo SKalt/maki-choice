@@ -12,9 +12,9 @@
       </div>
       <div class="display-icon-15">
         <inline :name="`./${name}-15.svg`"></inline>
+          </div>
       </div>
     </div>
-  </div>
 </template>
 <script>
   export default {
@@ -22,16 +22,24 @@
   }
 </script>
 <style scoped>
+  h3{
+    text-align: center;
+  }
+  .align {
+    display: block;
+    margin: auto;
+  }
   .display-icon-11 {
     display: inline-block;
     border:1px solid;
-    width: calc(20vh * .7333333);
-    height: calc(20vh * .7333333);
+    width:  110px;
+    height: 110px;
+    margin-left: calc(50% - 130px)
   }
   .display-icon-15{
     display: inline-block;
     border:1px solid;
-    width: 20vh;
-    height: 20vh;
+    height:150px;
+    width:150px;
   }
 </style>

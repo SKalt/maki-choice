@@ -37,15 +37,21 @@
   }
 </script>
 <style scope>
-  div {
+  div.icon-holder {
     display: inline-block;
+    border: 1px solid rgba(200,200,200,.5);
+  }
+  div.icon-holder:hover{
+    border: 1px solid black;
   }
   div.icon-11{
+    display: inline-block;
     margin:5px;
     width:11px;
     height: 11px;
   }
   div.icon-15 {
+    display: inline-block;
     margin:5px;
     width: 15px;
     height: 15px;
