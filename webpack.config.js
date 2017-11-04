@@ -1,7 +1,7 @@
 /* global __dirname*/
 const path = require('path');
 
-module.exports = (env={}) => {
+module.exports = (/*env={}*/) => {
   return {
     entry: './main.js',
     output: {
