@@ -22,12 +22,12 @@ module.exports = (env={}) => {
           ]
         },
         {
-          test: /\.(png|jpg|gif)$/,
+          test: /\.(png|jpg|gif|svg)$/,
           use: [
             'file-loader'
           ]
         },
-        {test:/\.svg$/, use:['svg-inline-loader']},
+        // {test:/\.svg$/, use:['svg-inline-loader']},
         {
           test:/\.vue$/,
           use: ['vue-loader']
