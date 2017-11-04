@@ -11,11 +11,11 @@
     <!-- icons -->
     <div class="row display-icons">
       <div class="col-12">
-      <div class="display-icon-11">
-        <inline :name="`./${name}-11.svg`"></inline>
-      </div>
-      <div class="display-icon-15">
-        <inline :name="`./${name}-15.svg`"></inline>
+          <div class="display-icon-11">
+            <inline :name="`./${name}-11.svg`"></inline>
+          </div>
+          <div class="display-icon-15">
+            <inline :name="`./${name}-15.svg`"></inline>
           </div>
       </div>
     </div>
@@ -23,7 +23,12 @@
 </template>
 <script>
   export default {
-    props:['name', 'theme']
+    props:['name', 'theme'],
+    updated(){
+      Array.from(document.querySelectorAll('metadata'))
+        .map(el => el.parentElement)
+        .forEach(svg => svg.appendChild(svg.querySelector('path')))
+    }
   }
 </script>
 <style scoped>
