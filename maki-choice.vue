@@ -16,7 +16,7 @@
             v-bind="icon"
             :search="search"
             :key="icon.name"
-            v-on:clicked="showIcon"
+            v-on:clicked="showIconClicked"
             v-on:hovered="showIcon"
           ></icon-pair>
         </div>
@@ -48,7 +48,15 @@ export default {
     // HACK: to remove all non-displaying svg
     Array.from(document.querySelectorAll('metadata'))
       .map(el => el.parentElement)
-      .forEach(svg => svg.appendChild(svg.querySelector('path')))
+      .forEach(svg => svg.appendChild(svg.querySelector('path')));
+    let hash = window.location.hash.slice(1);
+    if (hash){
+      let matchedIcon = icons.filter(icon => icon.name == hash);
+      if (matchedIcon.length == 1){
+        matchedIcon = matchedIcon[0];
+        this.showIcon(matchedIcon);
+      }
+    }
   },
   data(){
     return {
@@ -61,6 +69,10 @@ export default {
     };
   },
   methods:{
+    showIconClicked(toShow){
+      window.location.hash = toShow.name;
+      this.showIcon(toShow);
+    },
     showIcon(toShow){
       this.shown = toShow;
     }
